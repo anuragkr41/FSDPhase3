@@ -1,0 +1,38 @@
+package com.anurag.sportyshoes.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product")
+public class Product {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name = "size")
+	private int size;
+
+	@Column(name="category")
+	private String category;
+
+	@Column(name="price")
+	private int price;
+	
+	@Column(name="quantity_available")
+	private String quantityAvailable;
+	
+	public Product() {}
+
+		
+	
+}

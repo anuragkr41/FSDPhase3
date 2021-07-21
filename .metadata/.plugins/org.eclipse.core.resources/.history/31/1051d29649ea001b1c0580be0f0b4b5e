@@ -1,0 +1,5 @@
+package com.anurag.sportyshoes.service;
+
+public interface UserService {
+
+}

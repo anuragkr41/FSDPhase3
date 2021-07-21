@@ -1,0 +1,12 @@
+127.0.0.1 - - [22/Jul/2021:00:22:15 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:22:15 +0530] "GET /sporty-shoes/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:22:18 +0530] "GET /sporty-shoes/user/list HTTP/1.1" 200 1340
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:22:18 +0530] "GET /sporty-shoes/resources/css/style.css HTTP/1.1" 200 1049
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:22:21 +0530] "GET /list-products.jsp HTTP/1.1" 404 747
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:23:29 +0530] "GET /sporty-shoes/product/list HTTP/1.1" 200 1708
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:24:36 +0530] "GET /sporty-shoes/product/list HTTP/1.1" 200 1728
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:26:34 +0530] "GET /sporty-shoes/user/list HTTP/1.1" 200 1369
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:26:35 +0530] "GET /sporty-shoes/product/list HTTP/1.1" 200 1728
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:27:02 +0530] "GET /sporty-shoes/product/list HTTP/1.1" 200 1728
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:27:08 +0530] "GET /sporty-shoes/user/list HTTP/1.1" 200 1348
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:00:27:10 +0530] "GET /sporty-shoes/product/list HTTP/1.1" 200 1728

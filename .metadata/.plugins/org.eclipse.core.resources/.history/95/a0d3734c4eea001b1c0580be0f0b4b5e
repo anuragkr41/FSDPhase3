@@ -1,0 +1,11 @@
+package com.anurag.sportyshoes.dao;
+
+import java.util.List;
+
+import com.anurag.sportyshoes.entity.Product;
+import com.anurag.sportyshoes.entity.User;
+
+public interface ProductDAO {
+
+	public List<Product> getproducts();
+}

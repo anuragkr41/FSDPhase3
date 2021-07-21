@@ -1,0 +1,15 @@
+package com.anurag.sportyshoes.service;
+
+import java.util.List;
+
+import com.anurag.sportyshoes.entity.User;
+
+public class UserServiceImpl implements UserService {
+
+	@Override
+	public List<User> getUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

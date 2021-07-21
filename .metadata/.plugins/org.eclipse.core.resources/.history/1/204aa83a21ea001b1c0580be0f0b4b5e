@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User List</title>
+</head>
+<body>
+
+List Users - coming soon...
+<img alt="" src="static/resources/ppic.jpg">
+</body>
+</html>
