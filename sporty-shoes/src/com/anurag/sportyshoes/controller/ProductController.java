@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.anurag.sportyshoes.dao.UserDAO;
@@ -36,4 +38,24 @@ public class ProductController {
 		
 		return "list-products";
 	}
+	
+	@GetMapping("/productAddForm")
+	public String productAddForm(Model theModel) {
+		
+		//create model attribute to bind the form data
+		
+		Product theProduct = new Product();
+		theModel.addAttribute("product", theProduct);
+		
+		return "product-form";
+	}
+	
+	@PostMapping("/saveProduct")
+	public String saveProduct(@ModelAttribute("product") Product theProduct) {
+		// save the productusing the service
+		productService.saveProduct(theProduct);
+		return "redirect:/product/list";
+	}
+	
+	
 }
