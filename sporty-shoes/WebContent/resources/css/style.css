@@ -8,7 +8,7 @@ table {
 	border-collapse:collapse;
 	border-bottom:1px solid gray;
 	font-family: Tahoma,Verdana,Segoe,sans-serif;
-	width:72%;
+	width:82%;
 }
  
 th {
@@ -27,11 +27,11 @@ tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #BBBBBB}	
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 70%; background: #ff0090; margin-top: 0px; padding:15px 0px 15px 15px;}
+#header {width: 100%; background: #ff0090; margin-top: 20px; padding:15px 0px 15px 15px;}
 #header h2 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
 #container h3 {color: #000;}
-#container #content {margin-top: 20px;}
+#container #content {margin-top: 25px;}
 
 .add-button {
 	border: 1px solid #666; 

@@ -104,9 +104,5 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", userType=" + userType + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", email=" + email + ", password=" + password + ", productPurchased=" + productPurchased + "]";
-	}
-	
-	
-	
-	
+	}	
 }

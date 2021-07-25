@@ -7,10 +7,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.anurag.sportyshoes.entity.Product;
-import com.anurag.sportyshoes.entity.User;
 
 @Repository
 public class ProductDAOImpl implements ProductDAO {
@@ -47,7 +45,71 @@ public class ProductDAOImpl implements ProductDAO {
 		//get current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		//save the customer
-		currentSession.save(theProduct);
+		currentSession.saveOrUpdate(theProduct);
+		
+	}
+
+
+
+	@Override
+	public Product getCustomer(int theID) {
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		// now retrieve the object from database using the primary key
+		Product theProduct = currentSession.get(Product.class, theID);
+		return theProduct;
+	}
+
+
+
+	@Override
+	public void deleteProduct(int theId) {
+
+
+		// get the current hibernate session
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		// delete the object by primary key
+		Query theQuery = currentSession.createQuery("delete from Product where id=:productID ");
+		theQuery.setParameter("productID", theId);
+		
+		theQuery.executeUpdate();
+		
+	}
+
+
+
+	@Override
+	public void buyProduct(int theId) {
+		// TODO Auto-generated method stub
+		Session currentSession = sessionFactory.getCurrentSession();
+		// delete the object by primary key
+		
+//		Query theQuery = currentSession.createQuery("update from Product")
 		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

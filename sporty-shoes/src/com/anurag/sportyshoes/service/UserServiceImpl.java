@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.anurag.sportyshoes.dao.UserDAO;
+import com.anurag.sportyshoes.entity.Product;
 import com.anurag.sportyshoes.entity.User;
 
 @Service
@@ -26,5 +27,31 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userDAO.getUsers();
 	}
+
+
+
+
+
+	@Override
+	@Transactional
+	public void saveUser(User theUser) {
+		// TODO Auto-generated method stub
+	
+		userDAO.saveUser(theUser);
+	}
+
+
+
+
+
+	@Override
+	@Transactional
+	public List<User> searchUsers(String theSearchName) {
+		return userDAO.searchUsers(theSearchName);
+	}
+	
+	
+	
+	
 
 }

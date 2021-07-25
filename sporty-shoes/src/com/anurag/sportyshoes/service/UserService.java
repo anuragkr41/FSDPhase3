@@ -8,4 +8,7 @@ public interface UserService {
 	
 	public List<User> getUsers();
 
+	public void saveUser(User theUser);
+
+	public List<User> searchUsers(String theSearchName);
 }

@@ -65,3 +65,13 @@
 0:0:0:0:0:0:0:1 - - [22/Jul/2021:11:47:29 +0530] "GET /sporty-shoes/product/productAddForm HTTP/1.1" 200 1685
 0:0:0:0:0:0:0:1 - - [22/Jul/2021:11:48:01 +0530] "POST /sporty-shoes/product/saveProduct HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [22/Jul/2021:11:48:01 +0530] "GET /sporty-shoes/product/list HTTP/1.1" 200 2236
+127.0.0.1 - - [22/Jul/2021:14:19:05 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:14:19:06 +0530] "GET /sporty-shoes/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:14:19:07 +0530] "GET /sporty-shoes/user/list HTTP/1.1" 200 1348
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:14:19:07 +0530] "GET /sporty-shoes/resources/css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:14:19:09 +0530] "GET /sporty-shoes/product/list HTTP/1.1" 200 2236
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:14:19:19 +0530] "GET /sporty-shoes/product/productAddForm HTTP/1.1" 200 1685
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:14:19:19 +0530] "GET /sporty-shoes/resources/css/add-user-style.css HTTP/1.1" 200 609
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:14:19:24 +0530] "GET /sporty-shoes/product/list HTTP/1.1" 200 2236
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:14:19:29 +0530] "GET /sporty-shoes/product/productAddForm HTTP/1.1" 200 1685
+0:0:0:0:0:0:0:1 - - [22/Jul/2021:14:19:39 +0530] "GET /sporty-shoes/product/list HTTP/1.1" 200 2236

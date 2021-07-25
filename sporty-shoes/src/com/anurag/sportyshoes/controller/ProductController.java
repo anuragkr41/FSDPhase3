@@ -9,12 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.anurag.sportyshoes.dao.UserDAO;
 import com.anurag.sportyshoes.entity.Product;
-import com.anurag.sportyshoes.entity.User;
 import com.anurag.sportyshoes.service.ProductService;
-import com.anurag.sportyshoes.service.UserService;
 
 @Controller
 @RequestMapping("/product")
@@ -56,6 +54,53 @@ public class ProductController {
 		productService.saveProduct(theProduct);
 		return "redirect:/product/list";
 	}
+	
+	@GetMapping("showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("productID") int theID, Model theModel) {
+		
+		//get the customer from the service
+		Product theProduct = productService.getProduct(theID);
+		//set  customer as a model attribute to pre-populate the form
+		theModel.addAttribute("product", theProduct);
+		//send over to our form
+		return "product-form";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteProduct(@RequestParam("productID") int theId) {
+		
+		//delete the product
+		productService.deleteProduct(theId);
+		return "redirect:/product/list";
+	}
+	
+	@GetMapping("/buy")
+	public String buyProduct(@RequestParam("productID") int theId) {
+	
+		// buy the product by updating the time stamp against the user id
+		productService.buyProduct(theId);
+		return "redirect:/product/store";
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

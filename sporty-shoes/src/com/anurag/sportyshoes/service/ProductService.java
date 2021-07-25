@@ -10,4 +10,11 @@ public interface ProductService {
 
 	public void saveProduct(Product theProduct);
 
+	public Product getProduct(int theID);
+
+	public void deleteProduct(int theId);
+
+	public void buyProduct(int theId);
+
+
 }
