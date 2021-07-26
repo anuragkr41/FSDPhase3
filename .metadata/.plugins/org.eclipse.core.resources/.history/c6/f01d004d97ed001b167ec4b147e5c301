@@ -1,0 +1,59 @@
+package com.anurag.sportyshoes.dao;
+
+import java.util.Date;
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.anurag.sportyshoes.entity.PurchaseDetail;
+
+@Repository
+public class PurchaseDetailDAO {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	public int save(PurchaseDetail pd) {
+		
+		return (int)sessionFactory.getCurrentSession().save(pd);
+		
+	}
+	
+	List<PurchaseDetail> getAllPurchases()
+	{
+		return sessionFactory.getCurrentSession().createQuery("From PurchaseDetail", PurchaseDetail.class).getResultList();
+	}
+	
+	PurchaseDetail getbyPurchaseId(int purchaseId)
+	{
+		return sessionFactory.getCurrentSession().createQuery("from PurchaseDetail where purchaseId="+purchaseId,PurchaseDetail.class).uniqueResult();
+	}
+	
+	List<PurchaseDetail> getPurchasesByUserId(int userId) {
+		
+		return sessionFactory.getCurrentSession().createQuery("from PurchaseDetail where purchasedByUserID="+userId,PurchaseDetail.class).getResultList();
+	}
+	
+	List<PurchaseDetail> getPurcahsesForProduct(int productId) {
+		
+		
+		return sessionFactory.getCurrentSession().createQuery("from PurchaseDetail where purchasedProductID="+productId,PurchaseDetail.class).getResultList();
+		
+	}
+	
+	List<PurchaseDetail> getPurchasesforParticularDate(Date date) {
+		
+		return sessionFactory.getCurrentSession().createNativeQuery("select * from purchasedetail where date="+date, PurchaseDetail.class).getResultList();
+		
+	}
+	
+	List<PurchaseDetail> getPurchasesforRangeDates(Date fromDate,Date toDate) {
+		
+		return sessionFactory.getCurrentSession().createNativeQuery("select * from purchasedetail where date between "+fromDate+" and "+toDate,PurchaseDetail.class).getResultList();
+	}
+	
+
+
+}

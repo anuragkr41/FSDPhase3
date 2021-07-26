@@ -1,0 +1,5 @@
+package com.anurag.sportyshoes.dao;
+
+public class PurchaseDetailDao {
+
+}

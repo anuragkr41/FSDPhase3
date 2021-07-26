@@ -1,0 +1,32 @@
+package com.anurag.sportyshoes.dao;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.anurag.sportyshoes.entity.PurchaseDetail;
+
+@Repository
+public class PurchaseDetailDAO {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	List<PurchaseDetail> getAllPurchases()
+	{
+		return sessionFactory.getCurrentSession().createQuery("From PurchaseDetail", PurchaseDetail.class).getResultList();
+	}
+	
+	PurchaseDetail getbyPurchaseId(int purchaseId)
+	{
+		return sessionFactory.getCurrentSession().createQuery("from PurchaseDetail where purchaseId="+purchaseId,PurchaseDetail.class).uniqueResult();
+	}
+	
+	List<PurchaseDetail> getPurchasesByUserId(int userId) {
+		
+		return sessionFactory.getCurrentSession().createQuery("from PurchaseDetail where purchasedByUserID="+userId,PurchaseDetail.class).getResultList();
+	}
+
+}

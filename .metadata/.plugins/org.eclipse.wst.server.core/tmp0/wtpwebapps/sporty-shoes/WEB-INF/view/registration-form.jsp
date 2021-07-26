@@ -34,7 +34,7 @@
   crossorigin="anonymous"></script>
 
 
-<%@include file="customer-menu.jsp"%>
+
 
 	<div id="wrapper">
 		<div id="header">
@@ -44,7 +44,7 @@
 
 	<div id="container">
 		<h3>Save User</h3>
-		<form:form action="saveUser" modelAttribute="user" method="POST">
+		<form:form action="${pageContext.request.contextPath}/user/saveUser" modelAttribute="user" method="POST">
 
 			<table>
 				<tbody>
@@ -66,7 +66,7 @@
 					</tr>
 					<tr>
 						<td><label>Password:</label></td>
-						<td><form:input path="password" /></td>
+						<td><form:password path="password" /></td>
 
 					</tr>
 

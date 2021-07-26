@@ -24,7 +24,7 @@
   integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
   crossorigin="anonymous"></script>
 
-<%@include file="admin-menu.jsp"%>
+<%@include file="customer-menu.jsp"%>
 
 
 	<div id="wrapper">
@@ -51,13 +51,24 @@
 							<!--Construct an update link with product id  -->
 							<c:url var="buyLink" value= "/product/buy">
 								<c:param name="productID" value = "${tempProduct.id}"/>
+								<c:param name="userID" value = "<%if(u1!=null){%>${u1.getId()}<%}%>"/>
 							</c:url>
+
+					<%-- 	<form>
+						<input type = "hidden" name ="purchaseByUserId" value="<%=u1.getId() %>"/>
+						</form>
+						 --%>
+
 
 							
 							
 							<tr>
+							
+							<form action = "${pageContext.request.contextPath}/user/purchaseProduct" method ="POST">
+								<input type = "hidden" name ="purchaseByUserId" value="<%if(u1!=null){%><%=u1.getId()%><%}%>"/>
+								<input type = "hidden" name ="purchaseProductId" value="${tempProduct.id}"/>
+								
 								<td><%=sno++%></td>
-						
 								<td>${tempProduct.name}</td>
 								<td>${tempProduct.size}</td>
 								<td>${tempProduct.category}</td>
@@ -66,10 +77,9 @@
 								
 								<td>
 								<!--Display the update Link  -->
-								<a href="${buyLink}" onClick="if(!(confirm('Are you sure you want to buy this product?'))) return false">Buy</a>
+								<button class="btn btn-outline-primary" onClick="if(!(confirm('Are you sure you want to buy this product?'))) return false">Buy</button>
 								</td>
-								
-
+								</form>
 							</tr>
 
 						</c:forEach>

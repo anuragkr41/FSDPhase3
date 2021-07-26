@@ -1,1 +1,1 @@
-<% response.sendRedirect("product/list"); %>
+<% response.sendRedirect("showMyLoginPage"); %>

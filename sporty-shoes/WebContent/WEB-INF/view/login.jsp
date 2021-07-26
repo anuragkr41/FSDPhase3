@@ -34,7 +34,7 @@
     
     <main class="form-signin">
     
-    <form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="POST">
+    <form:form action="${pageContext.request.contextPath}/user/authenticateTheUser" method="POST">
     <img class="mb-4" src="${pageContext.request.contextPath}/resources/images/Logo.png" alt="Main logo" width="75" height="75">
     
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
@@ -49,7 +49,7 @@
   
   
       <div class="form-floating">
-        <input type="text" name ="username" class="form-control" id="floatingInput" placeholder="username">
+        <input type="email" name ="email" class="form-control" id="floatingInput" placeholder="Email">
         <label for="floatingInput">Username</label>
       </div>
       <div class="form-floating">
@@ -65,7 +65,8 @@
         </label>
       </div>
      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-     <button class="w-100 btn btn-lg btn-secondary" style='margin-top: 20px' type="submit">Register New User</button>
+     
+     <a href="<%=request.getContextPath()%>/register" class="w-100 btn btn-lg btn-secondary" style='margin-top: 20px' type="submit">Register New User</a>
       <p class="mt-5 mb-3 text-muted"> Made by Anurag Kumar</p>
     
     </form:form>

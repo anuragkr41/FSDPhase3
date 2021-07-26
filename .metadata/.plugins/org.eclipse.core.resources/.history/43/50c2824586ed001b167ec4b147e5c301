@@ -1,0 +1,10 @@
+package com.anurag.sportyshoes.entity;
+
+public class PurchaseDetail {
+	
+	private int purchaseId;
+	
+	private int purchasedByUserID;
+	
+
+}

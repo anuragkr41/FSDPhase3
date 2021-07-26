@@ -79,7 +79,7 @@ public class ProductController {
 	
 		// buy the product by updating the time stamp against the user id
 		productService.buyProduct(theId);
-		return "redirect:/product/store";
+		return "redirect:user/store";
 		
 	}
 	

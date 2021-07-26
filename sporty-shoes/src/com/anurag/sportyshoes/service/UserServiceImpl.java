@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.anurag.sportyshoes.dao.UserDAO;
+import com.anurag.sportyshoes.dao.UserDAOImpl;
 import com.anurag.sportyshoes.entity.Product;
 import com.anurag.sportyshoes.entity.User;
 
@@ -50,7 +51,21 @@ public class UserServiceImpl implements UserService {
 		return userDAO.searchUsers(theSearchName);
 	}
 	
-	
+	@Override
+	@Transactional
+	public User validateLogin(String email, String password) {
+		return userDAO.validateLogin(email, password);
+	}
+
+
+
+
+
+	@Override
+	public User getuserById(int id) {
+		
+		return userDAO.getuserById(id);
+	}
 	
 	
 

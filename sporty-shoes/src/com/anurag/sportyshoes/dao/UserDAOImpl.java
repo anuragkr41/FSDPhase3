@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.anurag.sportyshoes.entity.User;
 
@@ -18,6 +19,15 @@ public class UserDAOImpl implements UserDAO {
 	private SessionFactory sessionFactory;
 	
 	
+	
+	@Override
+	public User validateLogin(String email, String password) {
+		
+				Session currentSession = sessionFactory.getCurrentSession();
+		Query<User> theQuery = currentSession.createQuery("from User where email ='"+email+"' and password='"+password+"'",User.class);
+		User u1= theQuery.uniqueResult();
+		return u1;
+	}
 	
 	@Override
 	public List<User> getUsers() {
@@ -81,6 +91,14 @@ public class UserDAOImpl implements UserDAO {
         // return the results        
         return users;
         
+	}
+
+	@Override
+	@Transactional
+	public User getuserById(int id) {
+		sessionFactory.getCurrentSession().clear();
+		return sessionFactory.getCurrentSession().createQuery("from User where id="+id, User.class).uniqueResult();
+		
 	}
 
 }

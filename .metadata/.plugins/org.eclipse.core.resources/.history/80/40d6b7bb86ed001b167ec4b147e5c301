@@ -1,0 +1,19 @@
+package com.anurag.sportyshoes.entity;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+
+@Entity
+public class PurchaseDetail {
+	
+	private int purchaseId;
+	
+	private int purchasedByUserID;
+	
+	private int productID;
+	
+	private Date purchaseDate;
+
+	
+}

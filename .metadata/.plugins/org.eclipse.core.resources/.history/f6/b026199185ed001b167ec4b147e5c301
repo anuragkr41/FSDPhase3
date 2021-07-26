@@ -1,0 +1,14 @@
+package com.anurag.sportyshoes.entity;
+
+public class Snippet {
+	<%@page import="com.anurag.sportyshoes.entity.User"%>
+	<% User u1=(User)request.getSession(false).getAttribute("user_admin");
+			if(u1==null) {
+				response.sendRedirect("");
+			} else if(u1.getUserType() == 2) {
+			  /* response.sendRedirect("Not Authenticated Page"); */
+				out.println("<h1>Customer Not Authenticated for this Page</h1><br><h3>Go Back to <a href='user/store'>Home</a> Page</h3>");
+			}
+				%>
+}
+

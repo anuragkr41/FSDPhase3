@@ -11,4 +11,8 @@ public interface UserService {
 	public void saveUser(User theUser);
 
 	public List<User> searchUsers(String theSearchName);
+	
+	public User validateLogin(String email, String password);
+	
+	public User getuserById(int id);
 }
